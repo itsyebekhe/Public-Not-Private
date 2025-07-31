@@ -1,0 +1,28 @@
+name: Fetch and Process Public VPN Config
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */12 * * *'
+
+jobs:
+  fetch-and-process:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Run PHP script to fetch and create files
+        run: php fetch_config.php
+
+      - name: Commit and push if files changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Automated: Update public config files"
+          file_pattern: Public_Config_Not_Private.json This_Link_Is_For_Everyone.txt
+          commit_author: GitHub Actions <actions@github.com>
