@@ -1,1 +1,1 @@
-hysteria2://VPNy.net-@VPNynet@kevin.vpny.online:11001?obfs=salamander&obfs-password=VPNy.net-%40VPNynet&insecure=1&sni=kevin.vpny.online#Public-Config-Not-Private-1
+hysteria2://VPNy.net-@VPNynet@kevin.vpny.online:11002?obfs=salamander&obfs-password=VPNy.net-%40VPNynet&insecure=1&sni=kevin.vpny.online#Public-Config-Not-Private-1
