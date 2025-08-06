@@ -110,7 +110,7 @@
             },
             "password": "VPNy.net-@VPNynet",
             "server": "kevin.vpny.online",
-            "server_port": 11002,
+            "server_port": 11001,
             "tag": "Public-Config-Not-Private-1",
             "tls": {
                 "enabled": true,
