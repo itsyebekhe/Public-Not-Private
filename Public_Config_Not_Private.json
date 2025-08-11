@@ -18,18 +18,6 @@
                     "172.19.0.0/30",
                     "fdfe:dcba:9876::1/126"
                 ]
-            },
-            {
-                "action": "route",
-                "clash_mode": "Direct",
-                "server": "direct-dns"
-            },
-            {
-                "action": "route",
-                "rule_set": [
-                    "geosite-ir"
-                ],
-                "server": "direct-dns"
             }
         ],
         "servers": [
@@ -43,11 +31,6 @@
                 "address": "local",
                 "detour": "direct",
                 "tag": "local-dns"
-            },
-            {
-                "address": "tcp://8.8.8.8",
-                "detour": "direct",
-                "tag": "direct-dns"
             }
         ],
         "strategy": "prefer_ipv4"
@@ -84,7 +67,12 @@
             "outbounds": [
                 "auto",
                 "direct",
-                "Public-Config-Not-Private-1"
+                "Public-Config-Not-Private-1",
+                "Public-Config-Not-Private-2",
+                "Public-Config-Not-Private-3",
+                "Public-Config-Not-Private-4",
+                "Public-Config-Not-Private-5",
+                "VPNy.net"
             ],
             "tag": "proxy",
             "type": "selector"
@@ -92,7 +80,12 @@
         {
             "interval": "10m",
             "outbounds": [
-                "Public-Config-Not-Private-1"
+                "Public-Config-Not-Private-1",
+                "Public-Config-Not-Private-2",
+                "Public-Config-Not-Private-3",
+                "Public-Config-Not-Private-4",
+                "Public-Config-Not-Private-5",
+                "VPNy.net"
             ],
             "tag": "auto",
             "tolerance": 50,
@@ -110,48 +103,95 @@
             },
             "password": "VPNy.net-@VPNynet",
             "server": "kevin.vpny.online",
-            "server_port": 11001,
+            "server_port": 21001,
             "tag": "Public-Config-Not-Private-1",
             "tls": {
                 "enabled": true,
                 "insecure": true
             },
             "type": "hysteria2"
+        },
+        {
+            "obfs": {
+                "password": "VPNy.net-@VPNynet",
+                "type": "salamander"
+            },
+            "password": "VPNy.net-@VPNynet",
+            "server": "kevin.vpny.online",
+            "server_port": 21002,
+            "tag": "Public-Config-Not-Private-2",
+            "tls": {
+                "enabled": true,
+                "insecure": true
+            },
+            "type": "hysteria2"
+        },
+        {
+            "obfs": {
+                "password": "VPNy.net-@VPNynet",
+                "type": "salamander"
+            },
+            "password": "VPNy.net-@VPNynet",
+            "server": "kevin.vpny.online",
+            "server_port": 21003,
+            "tag": "Public-Config-Not-Private-3",
+            "tls": {
+                "enabled": true,
+                "insecure": true
+            },
+            "type": "hysteria2"
+        },
+        {
+            "obfs": {
+                "password": "VPNy.net-@VPNynet",
+                "type": "salamander"
+            },
+            "password": "VPNy.net-@VPNynet",
+            "server": "kevin.vpny.online",
+            "server_port": 21004,
+            "tag": "Public-Config-Not-Private-4",
+            "tls": {
+                "enabled": true,
+                "insecure": true
+            },
+            "type": "hysteria2"
+        },
+        {
+            "obfs": {
+                "password": "VPNy.net-@VPNynet",
+                "type": "salamander"
+            },
+            "password": "VPNy.net-@VPNynet",
+            "server": "kevin.vpny.online",
+            "server_port": 21005,
+            "tag": "Public-Config-Not-Private-5",
+            "tls": {
+                "enabled": true,
+                "insecure": true
+            },
+            "type": "hysteria2"
+        },
+        {
+            "down_mbps": 20,
+            "obfs": {
+                "password": "KevinZakarian",
+                "type": "salamander"
+            },
+            "password": "VPNy.net-@VPNynet",
+            "server": "kevin.vpny.online",
+            "server_port": 11001,
+            "tag": "Public-Config-Not-Private-6",
+            "tls": {
+                "enabled": true,
+                "insecure": true
+            },
+            "type": "hysteria2",
+            "up_mbps": 10
         }
     ],
     "route": {
         "auto_detect_interface": true,
         "final": "proxy",
-        "rule_set": [
-            {
-                "download_detour": "direct",
-                "format": "binary",
-                "tag": "geosite-private",
-                "type": "remote",
-                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs"
-            },
-            {
-                "download_detour": "direct",
-                "format": "binary",
-                "tag": "geosite-ir",
-                "type": "remote",
-                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ir.srs"
-            },
-            {
-                "download_detour": "direct",
-                "format": "binary",
-                "tag": "geoip-private",
-                "type": "remote",
-                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/private.srs"
-            },
-            {
-                "download_detour": "direct",
-                "format": "binary",
-                "tag": "geoip-ir",
-                "type": "remote",
-                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/ir.srs"
-            }
-        ],
         "rules": [
             {
                 "action": "sniff"
@@ -169,16 +209,6 @@
             {
                 "action": "hijack-dns",
                 "protocol": "dns"
-            },
-            {
-                "action": "route",
-                "outbound": "direct",
-                "rule_set": [
-                    "geoip-private",
-                    "geosite-private",
-                    "geosite-ir",
-                    "geoip-ir"
-                ]
             }
         ]
     }
