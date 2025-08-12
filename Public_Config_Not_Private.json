@@ -67,12 +67,7 @@
             "outbounds": [
                 "auto",
                 "direct",
-                "Public-Config-Not-Private-1",
-                "Public-Config-Not-Private-2",
-                "Public-Config-Not-Private-3",
-                "Public-Config-Not-Private-4",
-                "Public-Config-Not-Private-5",
-                "VPNy.net"
+                "Public-Config-Not-Private-1"
             ],
             "tag": "proxy",
             "type": "selector"
@@ -80,12 +75,7 @@
         {
             "interval": "10m",
             "outbounds": [
-                "Public-Config-Not-Private-1",
-                "Public-Config-Not-Private-2",
-                "Public-Config-Not-Private-3",
-                "Public-Config-Not-Private-4",
-                "Public-Config-Not-Private-5",
-                "VPNy.net"
+                "Public-Config-Not-Private-1"
             ],
             "tag": "auto",
             "tolerance": 50,
@@ -97,81 +87,6 @@
             "type": "direct"
         },
         {
-            "obfs": {
-                "password": "VPNy.net-@VPNynet",
-                "type": "salamander"
-            },
-            "password": "VPNy.net-@VPNynet",
-            "server": "kevin.vpny.online",
-            "server_port": 21001,
-            "tag": "Public-Config-Not-Private-1",
-            "tls": {
-                "enabled": true,
-                "insecure": true
-            },
-            "type": "hysteria2"
-        },
-        {
-            "obfs": {
-                "password": "VPNy.net-@VPNynet",
-                "type": "salamander"
-            },
-            "password": "VPNy.net-@VPNynet",
-            "server": "kevin.vpny.online",
-            "server_port": 21002,
-            "tag": "Public-Config-Not-Private-2",
-            "tls": {
-                "enabled": true,
-                "insecure": true
-            },
-            "type": "hysteria2"
-        },
-        {
-            "obfs": {
-                "password": "VPNy.net-@VPNynet",
-                "type": "salamander"
-            },
-            "password": "VPNy.net-@VPNynet",
-            "server": "kevin.vpny.online",
-            "server_port": 21003,
-            "tag": "Public-Config-Not-Private-3",
-            "tls": {
-                "enabled": true,
-                "insecure": true
-            },
-            "type": "hysteria2"
-        },
-        {
-            "obfs": {
-                "password": "VPNy.net-@VPNynet",
-                "type": "salamander"
-            },
-            "password": "VPNy.net-@VPNynet",
-            "server": "kevin.vpny.online",
-            "server_port": 21004,
-            "tag": "Public-Config-Not-Private-4",
-            "tls": {
-                "enabled": true,
-                "insecure": true
-            },
-            "type": "hysteria2"
-        },
-        {
-            "obfs": {
-                "password": "VPNy.net-@VPNynet",
-                "type": "salamander"
-            },
-            "password": "VPNy.net-@VPNynet",
-            "server": "kevin.vpny.online",
-            "server_port": 21005,
-            "tag": "Public-Config-Not-Private-5",
-            "tls": {
-                "enabled": true,
-                "insecure": true
-            },
-            "type": "hysteria2"
-        },
-        {
             "down_mbps": 20,
             "obfs": {
                 "password": "KevinZakarian",
@@ -180,7 +95,7 @@
             "password": "VPNy.net-@VPNynet",
             "server": "kevin.vpny.online",
             "server_port": 11001,
-            "tag": "Public-Config-Not-Private-6",
+            "tag": "Public-Config-Not-Private-1",
             "tls": {
                 "enabled": true,
                 "insecure": true
